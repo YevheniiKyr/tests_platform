@@ -11,24 +11,30 @@ const MainPage = () => {
     return (
         <div>
             <div className={styles.landing}>
-                Welcome to the Quiz App!
+                <h1>
+                    Welcome to the Quiz App!
+                </h1>
             </div>
             <div className={styles.creation_container}>
                 <div className={styles.creation}>
                     <div className={styles.creation_text}>
-                        <h1 className={styles.creation_header}>Create quizzes</h1>
+                        <h2 className={styles.creation_header}>Create quizzes</h2>
                         <p className={styles.creation_desc}>{creationDescription}</p>
                     </div>
-                    <img className={styles.createQuizImage} src={createQuiz} alt={"working man"}/>
+                    <div className={styles.createQuizImage_container}>
+                        <img className={styles.createQuizImage} src={createQuiz} alt={"working man"}/>
+                    </div>
                 </div>
             </div>
             <div className={styles.share_container}>
                 <div className={styles.share}>
                     <div className={styles.share_text}>
-                        <h1 className={styles.share_header}>Share quizzes</h1>
+                        <h2 className={styles.share_header}>Share quizzes</h2>
                         <p className={styles.share_desc}>{shareDescription}</p>
                     </div>
-                    <img className={styles.shareQuizImage} src={shareQuiz} alt={"friends"}/>
+                    <div className={styles.shareQuizImage_container}>
+                        <img className={styles.shareQuizImage} src={shareQuiz} alt={"friends"}/>
+                    </div>
                 </div>
             </div>
 

@@ -1,18 +1,20 @@
 import React from 'react';
-import styles from '../styles/header.module.css'
+import styles from '../styles/mainPage.module.css'
 import {Link} from "react-router-dom";
 import {ALL_QUIZZES_ROUTE, MAIN_ROUTE, QUIZ_CREATION_ROUTE} from "../utils/constRoutes";
-import logo from "../images/heart_logo.png"
 import logo_2 from "../images/logo_v2.png"
 
 const Header = () => {
     return (
         <div className={styles.header}>
             <div className={styles.logo_and_name}>
-                <Link to={MAIN_ROUTE} >
-                    <img className={styles.logo} src={logo_2}/>
+                <Link to={MAIN_ROUTE}>
+                    <img alt = {"logotype"}  className={styles.logo} src={logo_2}/>
                 </Link>
-                <p className={styles.name}> Explore yourself </p>
+                <Link to={MAIN_ROUTE} className={styles.link}>
+                    Explore yourself
+                </Link>
+
             </div>
             <div className={styles.navigation}>
                 <Link
