@@ -1,0 +1,67 @@
+.landing {
+    background: linear-gradient(to bottom right, #ff00dd, #e9e6ec);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.creation_container {
+    background: linear-gradient(to bottom right, #61dafb, #e9e6ec);
+
+}
+
+.creation {
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.creation_text {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.createQuizImage {
+    width: 50vw;
+    border-radius: 50%;
+    flex: 1;
+}
+
+.creation_desc {
+    text-align: left;
+}
+
+.share_container {
+    background: linear-gradient(to bottom right, #49d245, #e9e6ec);
+
+}
+
+.share {
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.share_text {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.share_desc {
+    text-align: left;
+}
+
+.shareQuizImage {
+    width: 50vw;
+    border-radius: 50%;
+    flex: 1;
+}
+
+.compare {
+
+}

@@ -1,0 +1,36 @@
+.header {
+    height: 10vh;
+    background-color: white;
+    display: flex;
+}
+
+.logo {
+    height: 9vh;
+    cursor: pointer;
+}
+
+.logo_and_name {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.link {
+    margin-right: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: #9a1a89;
+
+}
+
+.name {
+    margin-left: 0.5rem;
+}
