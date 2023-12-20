@@ -1,0 +1,240 @@
+
+h1, h2, h3, p, body {
+    padding: 0;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.option {
+    border-radius: 20px;
+    color: white;
+    background-color: #ab66a1;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    margin: 1.2rem auto 0;
+    flex: 8;
+    text-align: center;
+}
+
+.option_with_actions {
+    display: flex;
+}
+
+.creation_container {
+    width: 70vw;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.page_container {
+    background: linear-gradient(to bottom, #aad5d3, #5e5fb6);
+    min-height: 90vh;
+}
+
+.question_style {
+    display: flex;
+    align-self: center;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.form {
+
+}
+
+.create_quiz_header {
+    text-align: center;
+    color: #5d0a51;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.question_with_actions {
+    display: flex;
+    justify-content: center;
+
+}
+
+.delete_question_button {
+    border: none;
+    background: none;
+    color: #d14c4c;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+}
+
+.delete_option_button {
+    border: none;
+    background: none;
+    color: red;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+}
+
+.add_option_button {
+    border: none;
+    background: none;
+    color: #44d350;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+}
+
+.add_option_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+
+.add_option_container > h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.add_question_button {
+    border: none;
+    background: none;
+    color: #086a10;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+}
+
+.add_question_button:hover {
+    background: #d3d3d3;
+}
+
+.add_quiz_button {
+    border: #4569b2 3px solid;
+    border-radius: 10px;
+    padding: 0.4rem;
+    background: #acecb4;
+    color: #5c0a71;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.add_quiz_button:hover {
+    background: #488d50;
+}
+
+.save_question_button {
+    border: none;
+    background: none;
+    color: #133f0a;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.save_option_button {
+    border: none;
+    background: none;
+    color: #32ab18;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.custom_input {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.2rem;
+    width: 80%;
+    overflow: scroll;
+}
+
+.custom_input:focus {
+    outline: 2px solid #36439a;
+    border-radius: 10px;
+    color: greenyellow;
+}
+
+.question_area {
+    color: #0f063b;
+    background: none;
+    outline: 2px solid #a6a9dc;
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    resize: none;
+    height: 10vh;
+    flex: 10;
+}
+
+.question_container {
+    margin-top: 2rem;
+}
+
+.question_area:focus {
+    outline: 2px solid #3a40af;
+    color: rgba(135, 25, 178, 0.78);
+}
+
+.static_text {
+    font-size: 1.1rem;
+}
+
+.question_type_label {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+}
+
+.question_type_select {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+}
+
+.add_question_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.add_question_header {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #191d6b; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2d8a38; /* Color of the scrollbar handle on hover */
+}
+
