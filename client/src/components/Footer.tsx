@@ -2,7 +2,8 @@ import React from 'react';
 import {FaGithub} from "react-icons/fa6";
 import {MdOutlineEmail} from "react-icons/md";
 import {FaLinkedin} from "react-icons/fa";
-import styles from '../styles/mainPage.module.css'
+import styles from '../styles/footer.module.css'
+
 const Footer = () => {
     return (
         <div className={styles.footer}>

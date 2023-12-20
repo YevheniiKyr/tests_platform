@@ -1,0 +1,135 @@
+.header {
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 9vh;
+    cursor: pointer;
+    margin-right: 1vw;
+}
+
+.name {
+    font-size: 2rem;
+}
+
+.logo_and_name {
+    display: flex;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+.navigation {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    column-gap: 4vw;
+}
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+    color: #9a1a89;
+    font-size: 2rem;
+
+}
+
+/* MEDIA QUERIES FOR <576 */
+
+@media (max-width: 576px) {
+    .name {
+        font-size: 1.0rem;
+    }
+
+    .logo {
+        height: 7vh;
+        margin-right: 0.7rem;
+    }
+
+    .navigation {
+        justify-content: end;
+        padding-right: 1rem;
+    }
+
+    .link {
+        font-size: 1.0rem;
+    }
+
+}
+
+
+/* MEDIA QUERIES FOR 576 - 768 */
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .name {
+        font-size: 1.1rem;
+    }
+
+    .link {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* MEDIA QUERIES FOR 768 - 991 */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .name {
+        font-size: 1.2rem;
+    }
+
+    .link {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+/* MEDIA QUERIES FOR 991 - 1200 */
+
+@media (min-width: 991px) and (max-width: 1200px) {
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .link {
+        font-size: 1.3rem;
+    }
+
+}
+
+
+/* MEDIA QUERIES FOR 1200 - 1400 */
+
+@media (min-width: 1200px) {
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .link {
+        font-size: 1.4rem;
+    }
+
+}
+
+
+/* MEDIA QUERIES FOR 1400+ */
+
+@media (min-width: 1400px) {
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .link {
+        font-size: 1.5rem;
+    }
+
+}

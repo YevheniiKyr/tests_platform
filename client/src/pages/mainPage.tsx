@@ -21,8 +21,8 @@ const MainPage = () => {
                         <h2 className={styles.creation_header}>Create quizzes</h2>
                         <p className={styles.creation_desc}>{creationDescription}</p>
                     </div>
-                    <div className={styles.createQuizImage_container}>
-                        <img className={styles.createQuizImage} src={createQuiz} alt={"working man"}/>
+                    <div className={styles.create_quiz_image_container}>
+                        <img className={styles.create_quiz_image} src={createQuiz} alt={"working man"}/>
                     </div>
                 </div>
             </div>
@@ -32,8 +32,8 @@ const MainPage = () => {
                         <h2 className={styles.share_header}>Share quizzes</h2>
                         <p className={styles.share_desc}>{shareDescription}</p>
                     </div>
-                    <div className={styles.shareQuizImage_container}>
-                        <img className={styles.shareQuizImage} src={shareQuiz} alt={"friends"}/>
+                    <div className={styles.share_quiz_image_container}>
+                        <img className={styles.share_quiz_image} src={shareQuiz} alt={"friends"}/>
                     </div>
                 </div>
             </div>

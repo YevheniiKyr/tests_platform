@@ -1,49 +1,3 @@
-.h1, h2, h3, p, body {
-    padding: 0;
-    margin: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
-.header {
-    height: 10vh;
-    background-color: white;
-    display: flex;
-}
-
-.logo {
-    height: 9vh;
-    cursor: pointer;
-    margin-right: 1rem;
-}
-
-.name {
-    font-size: 2rem;
-}
-
-.logo_and_name {
-    display: flex;
-    flex: 1;
-    justify-content: start;
-    align-items: center;
-    margin-left: 2rem;
-}
-
-.navigation {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.link {
-    margin-right: 10%;
-    text-decoration: none;
-    cursor: pointer;
-    color: #9a1a89;
-    font-size: 2rem;
-
-}
 
 .name {
     margin-left: 0.5rem;
@@ -83,11 +37,18 @@
     margin-bottom: 0.8rem;
 }
 
-.createQuizImage {
-    width: 50vw;
+.create_quiz_image {
+    width: 45vw;
+    aspect-ratio: 15/9;
     border-radius: 50%;
     flex: 1;
-    align-self: center;
+
+}
+
+.create_quiz_image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .creation_desc {
@@ -102,7 +63,7 @@
     display: flex;
     width: 70vw;
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: 1rem 0 2rem 0;
 }
 
 .share_text {
@@ -120,72 +81,30 @@
     text-align: left;
 }
 
-.shareQuizImage {
-    width: 50vw;
+.share_quiz_image {
+    width: 35vw;
+    aspect-ratio: 12/9;
     border-radius: 50%;
     flex: 1;
-    align-self: center;
+
 }
 
+.share_quiz_image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 :root {
-    --header-color: #263d98;
+    --footer-color: #263d98;
     --icon-size: 25px;
     --header-height: 10vh;
-}
-
-.footer {
-    height: 10vh;
-    background-color: var(--header-color);
-    padding-bottom: 1rem;
-
-}
-
-.externalLinks {
-    margin-top: 0.5rem;
-    color: aliceblue;
-    align-self: center;
-    text-align: center;
-}
-
-.externalLinks a {
-    margin: 0 2vw;
-}
-
-.organization > h3 {
-    padding-top: 0.5rem;
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: white;
-}
-
-.footerIcon {
-    background-color: var(--header-color);
-    color: white;
-    font-size: 40px;
 }
 
 
 /* MEDIA QUERIES FOR <576 */
 
 @media (max-width: 576px) {
-    .name {
-        font-size: 1.0rem;
-    }
-
-    .logo {
-        height: 7vh;
-        margin-right: 0.7rem;
-    }
-
-    .navigation {
-        justify-content: end;
-    }
-
-    .link {
-        font-size: 1.0rem;
-    }
 
     .creation {
         width: 80vw;
@@ -199,15 +118,11 @@
         padding-top: 1rem;
     }
 
-    .createQuizImage {
+    .create_quiz_image {
         width: 80vw;
         margin-top: 1rem;
     }
 
-    .createQuizImage_container {
-        display: flex;
-        justify-content: center;
-    }
 
     .creation_text {
         font-size: 1rem;
@@ -218,15 +133,11 @@
         text-align: center;
     }
 
-    .shareQuizImage {
+    .share_quiz_image {
         width: 80vw;
         margin-top: 1rem;
     }
 
-    .shareQuizImage_container {
-        display: flex;
-        justify-content: center;
-    }
 
     .share_text {
         font-size: 1rem;
@@ -234,7 +145,7 @@
     }
 
     .share_desc {
-        text-align: center;
+        text-align: right;
     }
 
     .landing {
@@ -242,26 +153,12 @@
         text-align: center;
     }
 
-    .footerIcon {
-        font-size: 30px;
-    }
-
-    .organization > h3 {
-        font-size: 1rem;
-    }
 }
 
 
 /* MEDIA QUERIES FOR 576 - 768 */
 
 @media (min-width: 576px) and (max-width: 768px) {
-    .name {
-        font-size: 1.3rem;
-    }
-
-    .link {
-        font-size: 1.3rem;
-    }
 
     .creation {
         width: 85vw;
@@ -271,27 +168,26 @@
         width: 85vw;
     }
 
-    .createQuizImage {
-        width: 45vw;
-        height: 30vh;
+    .create_quiz_image {
+        width: 48vw;
     }
 
     .creation_text {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
-    .shareQuizImage {
-        width: 45vw;
-        height: 30vh;
+    .share_quiz_image {
+        width: 48vw;
     }
 
     .share_text {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .landing {
         font-size: 1.2rem;
     }
+
 }
 
 
@@ -299,14 +195,6 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
 
-    .name {
-        font-size: 1.4rem;
-    }
-
-    .link {
-        font-size: 1.4rem;
-    }
-
     .creation {
         width: 80vw;
     }
@@ -315,20 +203,20 @@
         width: 80vw;
     }
 
-    .createQuizImage {
+    .create_quiz_image {
         width: 45vw;
     }
 
     .creation_text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
-    .shareQuizImage {
+    .share_quiz_image {
         width: 45vw;
     }
 
     .share_text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
     .landing {
@@ -342,28 +230,20 @@
 
 @media (min-width: 991px) and (max-width: 1200px) {
 
-    .name {
-        font-size: 1.5rem;
-    }
-
-    .link {
-        font-size: 1.5rem;
-    }
-
-    .createQuizImage {
+    .create_quiz_image {
         width: 40vw;
     }
 
     .creation_text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    .shareQuizImage {
+    .share_quiz_image {
         width: 40vw;
     }
 
     .share_text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .landing {
@@ -377,28 +257,20 @@
 
 @media (min-width: 1200px) {
 
-    .name {
-        font-size: 1.5rem;
-    }
-
-    .link {
-        font-size: 1.5rem;
-    }
-
-    .createQuizImage {
-        width: 30vw;
+    .create_quiz_image {
+        width: 35vw;
     }
 
     .creation_text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    .shareQuizImage {
-        width: 30vw;
+    .share_quiz_image {
+        width: 40vw;
     }
 
     .share_text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .landing {
@@ -410,24 +282,17 @@
 /* MEDIA QUERIES FOR 1400+ */
 
 @media (min-width: 1400px) {
-    .name {
-        font-size: 1.7rem;
-    }
-
-    .link {
-        font-size: 1.7rem;
-    }
-
-    .createQuizImage {
-        width: 30vw;
-    }
 
     .creation_text {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
-    .shareQuizImage {
-        width: 30vw;
+    .create_quiz_image {
+        width: 40vw;
+    }
+
+    .share_quiz_image {
+        width: 40vw;
     }
 
     .share_text {
