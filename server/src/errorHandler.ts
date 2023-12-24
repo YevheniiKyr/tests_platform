@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import NotFoundException from "./Exceptions/NotFoundException.js";
-import ValidationException from "./Exceptions/ValidationException.js";
+import {Request, Response, NextFunction, ErrorRequestHandler} from "express";
+import NotFoundException from "./Exceptions/NotFoundException";
+import ValidationException from "./Exceptions/ValidationException";
 
-const errorHandler = (
+const errorHandler: ErrorRequestHandler = (
     error: Error,
     req: Request,
     res: Response,
@@ -15,7 +15,8 @@ const errorHandler = (
         return res.status(400).send({
             message: error.message,
         });
-    } else return res.status(500).json({ message: error.message });
+    }
+    else return res.status(500).json({ message: error.message });
 };
 
 export default errorHandler;

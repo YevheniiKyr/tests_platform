@@ -1,13 +1,20 @@
 import express from 'express';
-import quizRouter from './quizRouter.js'
-import errorHandler from "./errorHandler.js";
+import mongoose from 'mongoose'
+import * as process from "process";
+import quizRouter from "./quizRouter";
+import errorHandler from "./errorHandler";
+
 require("dotenv").config();
 
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 5000;
 const app = express();
+const MONGO_URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.c9ednp2.mongodb.net/?retryWrites=true&w=majority`
 
-// create Mongo DB and Connect to it
+mongoose.connect(MONGO_URL)
+mongoose.connection.on('connected', () => console.log("Connected to DB"))
+mongoose.connection.on('error', (error) => console.log(error))
+
 app.use(express.json());
 app.use("/quizzes", quizRouter);
 app.use(errorHandler);
-app.listen(PORT, () => console.log("server is started"));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

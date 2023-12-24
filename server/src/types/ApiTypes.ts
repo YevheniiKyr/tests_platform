@@ -1,11 +1,9 @@
-import { Category } from "./QuizTypes.js";
+import {Category, Question} from "./QuizTypes.js";
 
 type QuizBody = {
     name: string;
-    content: string;
-    category: Category;
-    dates: [string];
-    archived: boolean;
+    description: string;
+    questions: Question[]
 }
 
 type Message = { [key: string]: string };

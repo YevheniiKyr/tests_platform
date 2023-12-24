@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2020",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "node",
+    "baseUrl": "src",
     "outDir": "./build",
     "sourceMap": true,
+
   },
   "include": ["src/**/*"]
 }

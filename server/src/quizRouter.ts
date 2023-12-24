@@ -1,21 +1,33 @@
 import express from "express";
-import controller from "./quizController.js";
-// import { Schemas, ValidateQuiz } from "./middlewares/ValidateQuiz.js";
-import { tryCatch } from "./utils/tryCatch.js"
+import controller from "./quizController";
+import { tryCatch } from "./utils/tryCatch"
+import {Schemas, ValidateQuiz} from "./middlewares/ValidateQuiz";
 const router = express.Router();
 
 router.post(
     "/",
-    // tryCatch(ValidateTask(Schemas.task.create)),
+    ValidateQuiz(Schemas.quiz.create),
     tryCatch(controller.createQuiz),
 );
 
-router.get("/:id", tryCatch(controller.getQuiz));
-router.get("/", tryCatch(controller.getAllQuizzes));
+router.get(
+    "/:id",
+    tryCatch(controller.getQuiz)
+);
+
+router.get(
+    "/",
+    tryCatch(controller.getAllQuizzes)
+);
+
 router.patch(
     "/:id",
-    // tryCatch(ValidateTask(Schemas.task.update)),
+    tryCatch(ValidateQuiz(Schemas.quiz.update)),
     tryCatch(controller.updateQuiz),
 );
-router.delete("/:id", tryCatch(controller.deleteQuiz));
+
+router.delete(
+    "/:id",
+    tryCatch(controller.deleteQuiz)
+);
 export default router;
