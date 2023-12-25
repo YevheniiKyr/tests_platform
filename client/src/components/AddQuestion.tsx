@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {IoMdAddCircleOutline} from "react-icons/io";
 import styles from '../styles/quizCreationPage.module.css'
 import {useAppDispatch} from "../store/store";
-import { addQuestion} from "../store/newQuizSlice";
+import { addQuestion} from "../store/slices/newQuizSlice";
 
 const AddQuestion = () => {
     type QuestionType = "multiple" | "single"

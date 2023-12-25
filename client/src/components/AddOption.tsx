@@ -2,7 +2,7 @@ import React from 'react';
 import {IoMdAddCircleOutline} from "react-icons/io";
 import styles from "../styles/quizCreationPage.module.css";
 import {useAppDispatch} from "../store/store";
-import {addOption} from "../store/newQuizSlice";
+import {addOption} from "../store/slices/newQuizSlice";
 
 interface AddOptionProps {
     questionId: number;

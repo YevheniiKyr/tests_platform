@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import styles from '../styles/quizCreationPage.module.css'
-import {deleteOption, editOption} from "../store/newQuizSlice";
+import {deleteOption, editOption} from "../store/slices/newQuizSlice";
 import {useAppDispatch} from "../store/store";
 import { RiCloseFill } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";

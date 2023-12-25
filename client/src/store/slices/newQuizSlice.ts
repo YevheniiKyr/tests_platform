@@ -4,10 +4,8 @@ import {
     NewOption,
     NewQuestion,
     NewQuiz,
-
-} from "../types";
+} from '../../types/newQuizTypes';
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-
 
 
 const initialState: NewQuiz = {

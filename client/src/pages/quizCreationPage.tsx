@@ -3,17 +3,25 @@ import styles from '../styles/quizCreationPage.module.css'
 import AddQuestion from "../components/AddQuestion";
 import Question from "../components/Question";
 import {useAppSelector} from "../store/store";
-
+import {useCreateQuizMutation} from "../store/api/quiz/quizApi";
+import {QuizBody} from '../types/types'
 const QuizCreationPage = () => {
 
     const questions = useAppSelector(state => state.newQuiz.questions)
+    const [createQuiz] = useCreateQuizMutation()
 
     useEffect(() => {
 
     }, [])
 
     function handleQuizCreation(e: React.MouseEvent<HTMLButtonElement>) {
-        e.preventDefault()
+        e.preventDefault();
+        const newQuiz: QuizBody = {
+            name: 'newQuiz',
+            description: 'desc',
+            questions: questions
+        }
+        createQuiz(newQuiz)
     }
 
     return (

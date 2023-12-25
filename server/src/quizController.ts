@@ -20,6 +20,7 @@ class QuizController {
 
     getAllQuizzes: RequestHandler<{}, {}, {}, {}> = async (req, res, next) => {
         let quiz = await quizService.findAllQuizzes()
+        console.log("GET QUIZZES")
         return res.status(201).json({quizzes:quiz});
     };
 

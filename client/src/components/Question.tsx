@@ -1,11 +1,11 @@
 import React, {FC, useState} from 'react';
-import {Option} from '../types'
+import {Option} from '../types/types'
 import OptionElement from "./OptionElement";
 import styles from '../styles/quizCreationPage.module.css'
 import {MdDelete} from "react-icons/md";
 import AddOption from "./AddOption";
 import {useAppDispatch} from "../store/store";
-import {deleteQuestion, editQuestion} from "../store/newQuizSlice";
+import {deleteQuestion, editQuestion} from "../store/slices/newQuizSlice";
 import {FaSave} from "react-icons/fa";
 
 interface QuestionProps {

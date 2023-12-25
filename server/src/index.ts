@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import * as process from "process";
 import quizRouter from "./quizRouter";
 import errorHandler from "./errorHandler";
+import cors from "cors";
 
 require("dotenv").config();
 
@@ -14,6 +15,7 @@ mongoose.connect(MONGO_URL)
 mongoose.connection.on('connected', () => console.log("Connected to DB"))
 mongoose.connection.on('error', (error) => console.log(error))
 
+app.use(cors())
 app.use(express.json());
 app.use("/quizzes", quizRouter);
 app.use(errorHandler);

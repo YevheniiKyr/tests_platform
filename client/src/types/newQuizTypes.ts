@@ -1,15 +1,4 @@
-export interface Option {
-    id: number;
-    text: string;
-
-}
-
-export interface Question {
-    id: number;
-    text: string;
-    options: Option[];
-
-}
+import {Option, Question} from "./types";
 
 export interface NewQuiz {
     description: string | null;
