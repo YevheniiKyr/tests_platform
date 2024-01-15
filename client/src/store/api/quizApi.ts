@@ -1,24 +1,27 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import {Question, Quiz, QuizBody} from '../../../types/types'
+import {QuizFromServer, QuizzesFromServer} from "../../types/serverTypes";
 
 
 export const quizApi = createApi({
     reducerPath: 'quizApi',
+    tagTypes: ['QUIZZES'],
     baseQuery: fetchBaseQuery(
         {baseUrl: process.env.REACT_APP_API_URL}),
     endpoints: (builder) => ({
-        getAllQuizzes: builder.query<Quiz[], undefined>({
+        getAllQuizzes: builder.query<QuizzesFromServer, undefined>({
             query: () => 'quizzes',
+            providesTags: ['QUIZZES']
         }),
-        getQuiz: builder.query<Quiz, any>({
+        getQuiz: builder.query<QuizFromServer, any>({
             query: ( id) => `quizzes/${id}`,
         }),
-        createQuiz: builder.mutation<Quiz, QuizBody>({
+        createQuiz: builder.mutation<any, any>({
             query: quiz =>({
                 url: 'quizzes',
                 method: 'POST',
-                body: quiz
-            })
+                body: quiz,
+            }),
+            invalidatesTags: ['QUIZZES']
         })
         // deleteQuiz: builder.mutation({
         //     mutation: () => 'quizzes/:id',

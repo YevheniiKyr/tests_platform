@@ -28,12 +28,12 @@ const MainPage = () => {
             </div>
             <div className={styles.share_container}>
                 <div className={styles.share}>
+                    <div className={styles.share_quiz_image_container}>
+                        <img className={styles.share_quiz_image} src={shareQuiz} alt={"friends"}/>
+                    </div>
                     <div className={styles.share_text}>
                         <h2 className={styles.share_header}>Share quizzes</h2>
                         <p className={styles.share_desc}>{shareDescription}</p>
-                    </div>
-                    <div className={styles.share_quiz_image_container}>
-                        <img className={styles.share_quiz_image} src={shareQuiz} alt={"friends"}/>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,10 @@
-import {Option, Question} from "./types";
+import {Category, Option, Question} from "./types";
 
 export interface NewQuiz {
-    description: string | null;
-    author: string | null;
-    image: string | null;
+    description: string;
+    author: string ;
+    name: string;
+    image: string;
     questions: Question[],
     freeQuestionId: number;
     freeOptionId: number;
@@ -24,14 +25,17 @@ export interface DeleteOption {
 export interface EditOption {
     id: number;
     questionId: number;
-    text: string
+    text: string;
+    correct: boolean;
 
 }
 
 export interface NewQuestion {
     text: string;
     options: Option[];
+    category: Category;
 }
+
 
 export interface DeleteQuestion {
     id: number;
@@ -40,4 +44,18 @@ export interface DeleteQuestion {
 export interface EditQuestion {
     id: number;
     text: string;
+    category: Category
 }
+
+export interface QuizInfo {
+    description: string,
+    name: string,
+    author: string
+}
+
+export interface ChangeQuestionCategory {
+    id: number,
+    category: Category
+}
+
+export type QuestionCategory = "multiple" | "single"

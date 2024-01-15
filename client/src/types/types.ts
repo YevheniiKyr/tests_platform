@@ -1,6 +1,8 @@
+
 export interface Option {
     id: number;
     text: string;
+    correct: boolean
 
 }
 
@@ -8,20 +10,17 @@ export interface Question {
     id: number;
     text: string;
     options: Option[];
+    category: Category;
 
 }
 
-export type QuizBody = {
-    name: string;
-    description: string;
-    questions: Question[]
-}
-
+export type Category = "multiple" | "single"
 
 
 export interface Quiz {
     description: string | null;
     author: string | null;
-    image: string | null;
+    name: string
     questions: Question[],
+    _id: string
 }

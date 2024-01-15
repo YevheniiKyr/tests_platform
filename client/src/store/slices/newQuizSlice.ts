@@ -1,17 +1,20 @@
 import {
+    ChangeQuestionCategory,
     DeleteOption, DeleteQuestion,
     EditOption, EditQuestion,
     NewOption,
     NewQuestion,
-    NewQuiz,
+    NewQuiz, QuizInfo,
 } from '../../types/newQuizTypes';
+
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
 const initialState: NewQuiz = {
-    description: null,
-    author: null,
-    image: null,
+    description: '',
+    author: '',
+    image: '',
+    name: '',
     questions: [],
     freeQuestionId: 7,
     freeOptionId: 1000
@@ -39,6 +42,7 @@ export const newQuizSlice = createSlice({
             const question = state.questions.find(question => question.id === action.payload.id)
             if (question) {
                 question.text = action.payload.text
+                question.category = action.payload.category
             }
         },
         addOption: (state, action: PayloadAction<NewOption>) => {
@@ -47,7 +51,8 @@ export const newQuizSlice = createSlice({
             if (question) {
                 question.options.push({
                     id: state.freeOptionId,
-                    text: action.payload.text
+                    text: action.payload.text,
+                    correct: false
                 })
             }
             state.freeOptionId += 2;
@@ -69,11 +74,36 @@ export const newQuizSlice = createSlice({
                 const option = question.options.find(option => option.id === action.payload.id)
                 if (option) {
                     option.text = action.payload.text
+                    option.correct = action.payload.correct
                 }
             }
+        },
+
+        editInfo: (state, action: PayloadAction<QuizInfo>) => {
+            state.name = action.payload.name
+            state.author = action.payload.author
+            state.description = action.payload.description
+        },
+
+        setQuestionCategory: (state, action: PayloadAction<ChangeQuestionCategory>) => {
+            const question = state.questions.find(question => question.id === action.payload.id)
+
+            if (question) {
+                question.category = action.payload.category
+            }
         }
+
 
     }
 })
 export default newQuizSlice.reducer;
-export const {addQuestion, deleteQuestion, editQuestion, addOption, editOption, deleteOption} = newQuizSlice.actions
+export const {
+    addQuestion,
+    deleteQuestion,
+    editQuestion,
+    addOption,
+    editOption,
+    deleteOption,
+    editInfo,
+    setQuestionCategory
+} = newQuizSlice.actions

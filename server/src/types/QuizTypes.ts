@@ -1,14 +1,14 @@
 
 export type Category = "multiple" | "single"
 
-export type Options = {
-    correct_options: string[],
-    other_options: string[]
+export type Option = {
+    text: string,
+    correct: boolean,
 }
 
 export type Question = {
     text: string,
-    options: Options[],
+    options: Option[],
     category: Category
 }
 
@@ -17,3 +17,14 @@ export type Quiz = {
     description: string;
     Questions: Question[]
 }
+
+type QuizBody = {
+    name: string;
+    description: string;
+    author: string
+    questions: Question[]
+}
+
+type Message = { [key: string]: string };
+
+export {QuizBody, Message};

@@ -42,6 +42,42 @@ h1, h2, h3, p, body {
     text-align: center;
 }
 
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.field_input {
+    padding: 0.2rem;
+    width: 30vw;
+    height: 1.5rem;
+    border-radius: 20px;
+}
+
+.field_label {
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+}
+
+.save_quiz_info_button {
+    border-radius: 10px;
+    border: none;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    background-color: #234281;
+    margin-top: 1rem;
+    color: white;
+}
+
+.quiz_info_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form {
 
 }
@@ -56,7 +92,7 @@ h1, h2, h3, p, body {
 .question_with_actions {
     display: flex;
     justify-content: center;
-
+    margin-top: 0.5rem;
 }
 
 .delete_question_button {
@@ -121,9 +157,11 @@ h1, h2, h3, p, body {
 }
 
 .add_quiz_button {
-    border: #4569b2 3px solid;
+    /*border: #4569b2 3px solid;*/
+    border: none;
     border-radius: 10px;
-    padding: 0.4rem;
+    font-weight: 600;
+    padding: 0.6rem;
     background: #acecb4;
     color: #5c0a71;
     font-size: 1.5rem;
@@ -176,22 +214,25 @@ h1, h2, h3, p, body {
 
 .question_area {
     color: #0f063b;
-    background: none;
+    background: lightblue;
     outline: 2px solid #a6a9dc;
     font-size: 1.1rem;
     padding: 0.2rem;
     resize: none;
     height: 10vh;
     flex: 10;
-}
-
-.question_container {
-    margin-top: 2rem;
+    border-radius: 10px;
 }
 
 .question_area:focus {
     outline: 2px solid #3a40af;
-    color: rgba(135, 25, 178, 0.78);
+    color: rgba(17, 2, 23, 0.78);
+}
+
+.question_container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
 }
 
 .static_text {
@@ -216,12 +257,16 @@ h1, h2, h3, p, body {
 }
 
 .add_question_header {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 600;
     text-align: center;
     margin-top: 1rem;
 }
 
+.create_button_container {
+    display: flex;
+    justify-content: center;
+}
 
 /* Track */
 ::-webkit-scrollbar {

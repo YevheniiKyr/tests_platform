@@ -1,7 +1,7 @@
 import express from "express";
 import controller from "./quizController";
-import { tryCatch } from "./utils/tryCatch"
-import {Schemas, ValidateQuiz} from "./middlewares/ValidateQuiz";
+import { tryCatch } from "../../utils/tryCatch"
+import {Schemas, ValidateQuiz} from "../../middlewares/ValidateQuiz";
 const router = express.Router();
 
 router.post(
@@ -22,7 +22,7 @@ router.get(
 
 router.patch(
     "/:id",
-    tryCatch(ValidateQuiz(Schemas.quiz.update)),
+    ValidateQuiz(Schemas.quiz.update),
     tryCatch(controller.updateQuiz),
 );
 

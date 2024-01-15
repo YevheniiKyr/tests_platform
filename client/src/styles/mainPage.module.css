@@ -68,7 +68,7 @@
 
 .share_text {
     flex: 1;
-    padding-right: 1rem;
+    padding-left: 1rem;
     font-size: 1.3rem;
     align-self: center;
 }
@@ -296,7 +296,7 @@
     }
 
     .share_text {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .landing {

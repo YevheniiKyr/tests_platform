@@ -1,9 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose'
 import * as process from "process";
-import quizRouter from "./quizRouter";
+import quizRouter from "./api/quiz/quizRouter";
 import errorHandler from "./errorHandler";
 import cors from "cors";
+import answerRouter from "./api/answer/answerRouter";
 
 require("dotenv").config();
 
@@ -18,5 +19,7 @@ mongoose.connection.on('error', (error) => console.log(error))
 app.use(cors())
 app.use(express.json());
 app.use("/quizzes", quizRouter);
+app.use("/quizzes", answerRouter);
+
 app.use(errorHandler);
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

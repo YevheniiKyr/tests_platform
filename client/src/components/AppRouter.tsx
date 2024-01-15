@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import {publicRoutes} from "../routes";
 import MainPage from "../pages/mainPage";
 const AppRouter = () => {

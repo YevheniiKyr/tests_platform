@@ -1,15 +1,17 @@
-import {QuizBody} from "./types/ApiTypes";
-import {QuizModel} from "./models/Quizzes";
-import NotFoundException from "./Exceptions/NotFoundException";
+import {QuizBody} from "../../types/QuizTypes";
+import {QuizModel} from "../../models/Quizzes";
+import NotFoundException from "../../Exceptions/NotFoundException";
 
 class QuizService {
     async addQuiz(quizBody: QuizBody) {
-        console.log("WE ARE IN addQuiz")
 
-        const newQuiz = await QuizModel.create({...quizBody})
-        console.log("WE ADDED QUIZ")
+        const newQuiz = await QuizModel.create({
+            name: 'quiz',
+            description: quizBody.description,
+            questions: quizBody.questions,
+            author: quizBody.author
+        })
 
-        console.log("-".repeat(100), newQuiz)
         return newQuiz
     }
 

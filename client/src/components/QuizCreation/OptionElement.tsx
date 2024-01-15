@@ -1,31 +1,31 @@
 import React, {FC, useState} from 'react';
-import styles from '../styles/quizCreationPage.module.css'
-import {deleteOption, editOption} from "../store/slices/newQuizSlice";
-import {useAppDispatch} from "../store/store";
+import styles from '../../styles/quizCreationPage.module.css'
+import {deleteOption, editOption} from "../../store/slices/newQuizSlice";
+import {useAppDispatch} from "../../store/store";
 import { RiCloseFill } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
-
+import {Option} from '../../types/types'
+import {FaSave} from "react-icons/fa";
 interface OptionProps {
-    option: string;
+    option: Option;
     questionId: number;
-    id: number;
 }
 
-const OptionElement: FC<OptionProps> = ({id, option, questionId}) => {
+const OptionElement: FC<OptionProps> = ({option, questionId}) => {
 
-    const [currentOption, setCurrentOption] = useState(option)
+    const [text, setText] = useState(option.text)
 
     const dispatch = useAppDispatch()
 
     function handleOptionChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setCurrentOption(e.target.value)
+        setText(e.target.value)
     }
 
     function handleDelete() {
         dispatch(
             deleteOption({
                 questionId: questionId,
-                id: id
+                id: option.id
             })
         )
     }
@@ -34,18 +34,30 @@ const OptionElement: FC<OptionProps> = ({id, option, questionId}) => {
         dispatch(
             editOption({
                 questionId: questionId,
-                id: id,
-                text: currentOption
+                id: option.id,
+                text: text,
+                correct: option.correct
+            })
+        )
+    }
+
+    function handleChangeCorrect() {
+        dispatch(
+            editOption({
+                questionId: questionId,
+                id: option.id,
+                text: text,
+                correct: !option.correct
             })
         )
     }
 
     return (
         <div className={styles.option_with_actions}>
-            <div className={styles.option}>
+            <div className={styles.option} style = {{ backgroundColor: option.correct? "lightgreen" : "#ab66a1" }}>
                 <input
                     className={styles.custom_input}
-                    value={currentOption}
+                    value={text}
                     onChange={e => handleOptionChange(e)}/>
             </div>
             <button
@@ -59,6 +71,13 @@ const OptionElement: FC<OptionProps> = ({id, option, questionId}) => {
                 type="button"
                 className={styles.save_option_button}
                 onClick={handleSave}
+            >
+                <FaSave />
+            </button>
+            <button
+                type="button"
+                className={styles.save_option_button}
+                onClick={handleChangeCorrect}
             >
                 <TiTick />
             </button>
